@@ -75,7 +75,7 @@ void human(int map[4][4]) {
 
     int x = 0, y = 0;
     while (true) {
-        cout << "player1 enter coordinates:";
+        cout << "player1 is entering the coordinates:";
         cin >> x >> y;
 
         map[x][y] = 1;
@@ -86,7 +86,7 @@ void human(int map[4][4]) {
             cout << "player1 has won!" << endl;
             break;}
 
-        cout << "player2 enter coordinates:";
+        cout << "player2 is entering the coordinates:";
 
         cin >> x >> y;
 
@@ -100,7 +100,7 @@ void human(int map[4][4]) {
         }
         if(!checkOnDraw())
         {
-            cout << "It's draw!" << endl;
+            cout << "It's a draw!" << endl;
             break;
         }
     }
