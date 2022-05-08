@@ -75,10 +75,18 @@ void human(int map[4][4]) {
 
     int x = 0, y = 0;
     while (true) {
-        cout << "enter coordinates:";
+        cout << "player1 enter coordinates:";
         cin >> x >> y;
 
         map[x][y] = 1;
+
+        map_show(map);
+
+        if (game_over(map, 1) == 1) {
+            cout << "player1 has won!" << endl;
+            break;}
+
+        cout << "player2 enter coordinates:";
 
         cin >> x >> y;
 
@@ -86,12 +94,8 @@ void human(int map[4][4]) {
 
         map_show(map);
 
-        if (game_over(map, 1) == 1) {
-            cout << "You have won!" << endl;
-            break;
-        }
         if (game_over(map, 2) == 1) {
-            cout << "You have lost!" << endl;
+            cout << "player2 has won!" << endl;
             break;
         }
         if(!checkOnDraw())
@@ -113,7 +117,7 @@ void computer(int map[4][4]) {
             break;
         }
         if (!checkOnDraw()) {
-            cout << "It's draw!" << endl;
+            cout << "It's a draw!" << endl;
             break;
         }
     srand(time(NULL));
